@@ -50,7 +50,7 @@
 
      }
 
-    stage ('Test') {
+ /*   stage ('Test') {
 
                       sh 'mvn -Dmaven.test.failure.ignore=true clean install'
 
@@ -64,6 +64,14 @@
                                     //exclusionPattern: '**/target/classes/*closure*.class'
                                 }
                         }
+                    } */
+
+                    stage('Test') {
+                         steps {
+//                            sh './jenkins_build.sh'
+                            junit '*/build/test-results/*.xml'
+                            step( [ $class: 'JacocoPublisher' ] )
+                         }
                     }
 
     }
