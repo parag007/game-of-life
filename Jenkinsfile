@@ -47,24 +47,11 @@
                                      branch: 'master'
                         }
 
+     }
 
-                    if (isSeleniumTestingEnabled) {
-                        dir('devops-hackathon-test-suite') {
-                            git url: 'https://github.com/veersudhir83/devops-hackathon-test-suite.git',
-                                    branch: 'master'
-                        }
-                    }
+     stage ('Test') {
 
-                    if (isReportsEnabled) {
-                        dir('devops-static-app') {
-                            git url: 'https://github.com/veersudhir83/devops-static-app.git',
-                                    branch: 'master'
-                        }
-                    }
-
-                    dir('downloadsFromArtifactory') {
-                        // created folder for artifactory
-                }
+     
 
      }
 
