@@ -36,4 +36,6 @@
 
 
 
- }
+ }catch (exc) {
+      error "Caught: ${exc}"
+  }
