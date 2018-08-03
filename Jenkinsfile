@@ -51,7 +51,7 @@
 
     stage ('Test') {
                     steps {
-                                sh 'mvn -Dmaven.test.failure.ignore=true clean install'.
+                                sh 'mvn -Dmaven.test.failure.ignore=true clean install'
                             }
                     post {
                         success {
