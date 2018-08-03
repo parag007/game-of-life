@@ -24,10 +24,10 @@
     def isReportsEnabled = true
     //params.IS_REPORTS_ENABLED // Enable if you want to generate reports
 
-    def artifactName = appName // name of the war/jar/ear in artifactory
+   // def artifactName = appName // name of the war/jar/ear in artifactory
     def artifactExtension = "jar"
     def artifactoryRepoName = 'DevOps' // repo name in artifactory
-    def artifactoryAppName = appName // application name as per artifactory
+    //def artifactoryAppName = appName // application name as per artifactory
     def artifactoryTempFolder = 'downloadsFromArtifactory'
     // name of the local temp folder where file(s) from artifactory get downloaded
 
