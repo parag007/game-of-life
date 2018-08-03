@@ -13,6 +13,24 @@
     node{
 
     def mvnHome
+    def mvnAnalysisTargets = '-P metrics pmd:pmd test '
+    def artifactoryPublishInfo
+    def artifactoryServer
+    def isArchivalEnabled = true
+    def isDeploymentEnabled = true
+    //params.IS_DEPLOYMENT_ENABLED // Enable if you want to deploy code on app server
+    def isSeleniumTestingEnabled = true
+    //params.IS_SELENIUM_TESTING_ENABLED // Enable if you want to generate reports
+    def isReportsEnabled = true
+    //params.IS_REPORTS_ENABLED // Enable if you want to generate reports
+
+    def artifactName = appName // name of the war/jar/ear in artifactory
+    def artifactExtension = "jar"
+    def artifactoryRepoName = 'DevOps' // repo name in artifactory
+    def artifactoryAppName = appName // application name as per artifactory
+    def artifactoryTempFolder = 'downloadsFromArtifactory'
+    // name of the local temp folder where file(s) from artifactory get downloaded
+
 
 
      stage('Tool Setup') {
@@ -27,7 +45,26 @@
      dir('game-of-life') {
                              git url: 'https://github.com/parag007/game-of-life.git',
                                      branch: 'master'
-     }
+                        }
+
+
+                    if (isSeleniumTestingEnabled) {
+                        dir('devops-hackathon-test-suite') {
+                            git url: 'https://github.com/veersudhir83/devops-hackathon-test-suite.git',
+                                    branch: 'master'
+                        }
+                    }
+
+                    if (isReportsEnabled) {
+                        dir('devops-static-app') {
+                            git url: 'https://github.com/veersudhir83/devops-static-app.git',
+                                    branch: 'master'
+                        }
+                    }
+
+                    dir('downloadsFromArtifactory') {
+                        // created folder for artifactory
+                }
 
      }
 
