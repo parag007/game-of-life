@@ -12,12 +12,12 @@
 
     node{
 
-            def mvnHome
+            def mvnHome = 'mvn'
 
             stage('Tool Setup') {
                     // ** NOTE: These tools must be configured in the jenkins global configuration.
 
-                              mvnHome = tool 'mvn'
+                            //  mvnHome = tool 'mvn'
                 }
 
 
