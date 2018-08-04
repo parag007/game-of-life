@@ -17,6 +17,9 @@ pipeline {
         stage ('Build') {
             steps {
                 echo 'This is a minimal pipeline.'
+
+                git 'https://github.com/parag007/game-of-life.git'
+
             }
         }
     }
