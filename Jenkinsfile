@@ -30,9 +30,12 @@ pipeline {
         stage ('UnitTest') {
 
             steps{
-                 readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
+
+                dir ('/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests') {
+            //     readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
 
                 sh 'mvn clean verify'
+                }
 
            }
 
