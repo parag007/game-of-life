@@ -16,9 +16,11 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo 'This is a minimal pipeline.'
+                echo 'Cloning Project!!!'
 
                 git 'https://github.com/parag007/game-of-life.git'
+
+                sh 'mvn clean'
 
             }
         }
