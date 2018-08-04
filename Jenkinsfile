@@ -20,10 +20,21 @@ pipeline {
 
                 git 'https://github.com/parag007/game-of-life.git'
 
+                sh 'mvn install'
                 sh 'mvn compile'
                 sh 'mvn test'
 
             }
+        }
+
+        stage ('Unit Test') {
+
+        readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
+
+        sh 'mvn clean verify'
+
+
+
         }
     }
 }
