@@ -41,13 +41,14 @@
                 }
 
 
-     stage('Checkout') {
+     stage('Build') {
 
                 dir('game-of-life') {
                              git url: 'https://github.com/parag007/game-of-life.git',
                                      branch: 'master'
                         }
-
+                   mvn compile
+                   mvn test
         }
 
 
