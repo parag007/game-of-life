@@ -47,8 +47,8 @@
                              git url: 'https://github.com/parag007/game-of-life.git',
                                      branch: 'master'
                         }
-                   mvn compile
-                   mvn test
+                             mvn compile
+                             mvn test
         }
 
 
