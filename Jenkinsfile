@@ -29,7 +29,7 @@
                                          branch: 'master'
                             }
 
-                            sh '''mvnHome compile'''
+                            sh 'mvnHome compile'
 
 
 
