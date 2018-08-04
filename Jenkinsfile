@@ -29,9 +29,9 @@ pipeline {
 
         stage ('Unit Test') {
 
-        readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
+            readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
 
-        sh 'mvn clean verify'
+            sh 'mvn clean verify'
 
 
 
