@@ -34,7 +34,9 @@ pipeline {
                 dir ('/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests') {
             //     readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
 
-                sh 'mvn clean verify'
+               // sh 'mvn clean verify'
+
+               sh 'mvn -Dmaven.test.failure.ignore=true clean install'.
                 }
 
            }
