@@ -21,12 +21,18 @@
                 }
 
 
-             stage('Checkout') {
+             stage('Build') {
 
+                   echo '------------Cloning Repo----------------'
                     dir('game-of-life') {
                                  git url: 'https://github.com/parag007/game-of-life.git',
                                          branch: 'master'
                             }
+
+                            sh '''mvnHome compile'''
+
+
+
 
 
 
