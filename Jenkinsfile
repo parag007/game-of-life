@@ -27,12 +27,14 @@ pipeline {
             }
         }
 
-        stage ('Unit Test') {
+        stage ('UnitTest') {
 
-            readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
+            steps{
+                 readFile '/var/lib/jenkins/jobs/gamelife/workspace/gameoflife-acceptance-tests'
 
-            sh 'mvn clean verify'
+                sh 'mvn clean verify'
 
+           }
 
 
         }
