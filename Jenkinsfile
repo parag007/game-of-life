@@ -21,6 +21,7 @@ pipeline {
                 git 'https://github.com/parag007/game-of-life.git'
 
                 sh 'mvn compile'
+                sh 'mvn test'
 
             }
         }
